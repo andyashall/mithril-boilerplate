@@ -1,0 +1,26 @@
+.headCont {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+  font-size: .8rem;
+  z-index: 99;
+}
+.headLeft {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+.headLeft a {
+  text-decoration: none;
+  color: inherit;
+}
+.headRight {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}

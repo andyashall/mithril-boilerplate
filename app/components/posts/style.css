@@ -1,0 +1,11 @@
+.postsCont {
+  width: 800px;
+  min-height: calc(100vh - 3rem);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 3rem;
+  background-color: #fff;
+  border-left: 1px solid rgba(0,0,0,.05);
+  border-right: 1px solid rgba(0,0,0,.05);
+}
