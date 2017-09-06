@@ -7,7 +7,6 @@ export default class Posts {
     this.posts = []
   }
   oncreate(vnode) {
-    console.log(vnode)
     let sub = vnode.dom.baseURI.replace('http://localhost:3000/', '')
     if (sub == '') {
       sub = 'JavaScript'

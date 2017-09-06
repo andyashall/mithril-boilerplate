@@ -6,7 +6,7 @@ module.exports = (app, url, MongoClient, assert) => {
 
     app.post('/api/hello', (req, res) => {
         console.log(req.body)
-        res.status(200).send("hello " + randomID(20))
+        res.status(200).send({res: "hello", id: randomID(20)})
     })
 
 }

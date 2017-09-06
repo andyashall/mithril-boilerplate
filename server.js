@@ -15,7 +15,7 @@ const app = express()
 app.use(compression())
 
 app.use(require('cookie-parser')())
-app.use(require('body-parser').urlencoded({ extended: true }))
+app.use(require('body-parser').json())
 
 require('./api')(app, url, MongoClient, assert)
 

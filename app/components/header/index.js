@@ -3,10 +3,11 @@ import css from './style.css'
 
 export default class Header {
   post() {
+    let data = {mes: 'hello', doot: 'bar'}
     m.request({
       method: 'POST',
       url: '/api/hello',
-      body: {message: 'hello'}
+      data: data
     })
     .then((res)=>{console.log(res)})
     .catch((err)=>{console.log(err)})
