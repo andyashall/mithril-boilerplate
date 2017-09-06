@@ -14,7 +14,6 @@ const url = isDeveloping ? require("./mongo.conf.js") : process.env.MONGO_URL
 const app = express()
 app.use(compression())
 
-app.use(require('cookie-parser')())
 app.use(require('body-parser').json())
 
 require('./api')(app, url, MongoClient, assert)
