@@ -14,7 +14,7 @@ export default class Header {
   }
   view() {
     return m('.headCont',
-      m('.headLeft', m("a[href=/]", {oncreate: m.route.link}, "Home")),
+      m('.headLeft', m('a', {href: '/'}, 'Home')),
       m('.headRight', {onclick: this.post}, 'Login / Signup')
     )
   }
