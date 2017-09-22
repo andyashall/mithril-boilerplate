@@ -1,6 +1,7 @@
 import m from 'mithril'
 import Post from '../post'
 import css from './style.css'
+import store from '../../store'
 
 export default class Posts {
   constructor(vnode) {
@@ -22,7 +23,10 @@ export default class Posts {
     .catch((err)=>{console.log(err)})
   }
   view(vnode) {
-    return m('.postsCont', this.posts.map(p => {
+    return m('.postsCont', this.posts.filter(p => {
+        let combined = p.data.author.concat(p.data.title).toLowerCase()
+        return combined.indexOf(store.getState().search) !== -1
+      }).map(p => {
       return m(Post, {author: p.data.author, title: p.data.title})
     }))
   }

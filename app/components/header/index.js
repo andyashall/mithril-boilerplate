@@ -1,5 +1,7 @@
 import m from 'mithril'
 import css from './style.css'
+import store from '../../store'
+import {search, clearSearch} from '../../actions'
 
 export default class Header {
   post() {
@@ -15,6 +17,7 @@ export default class Header {
   view() {
     return m('.headCont',
       m('.headLeft', m('a', {href: '/'}, 'Home')),
+      m('.headCen', m('input', {onkeyup: (e)=>{store.dispatch(search(e.target.value))} , placeholder: 'Search...'})),
       m('.headRight', {onclick: this.post}, 'Login / Signup')
     )
   }
