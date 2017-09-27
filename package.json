@@ -1,16 +1,27 @@
 {
   "name": "mith",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.3",
+  "engines": {
+    "node": "6.11.3"
+  },
+  "description": "Full-Stack boilerplate using express, webpack and mithril",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist && cross-env NODE_ENV=production webpack --config ./webpack.prod.conf.js --progress --profile --colors",
     "prod": "export NODE_ENV=production PORT=3000 && node server.js",
     "start": "node server.js"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andyashall/mithril-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andyashall/mithril-boilerplate.git/issues"
+  },
+  "homepage": "https://github.com/andyashall/mithril-boilerplate.git",
+  "author": "Andy Ashall",
+  "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
