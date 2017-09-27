@@ -26,8 +26,8 @@ export default class Posts {
     return m('.postsCont', this.posts.filter(p => {
         let combined = p.data.author.concat(p.data.title).toLowerCase()
         return combined.indexOf(store.getState().search) !== -1
-      }).map(p => {
-      return m(Post, {author: p.data.author, title: p.data.title})
+      }).map((p,i) => {
+      return m(Post, {key: i, author: p.data.author, title: p.data.title})
     }))
   }
 }
