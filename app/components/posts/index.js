@@ -19,6 +19,7 @@ export default class Posts {
     .then((res) => {
       let p = res.data.children
       this.posts = p
+      console.log(res)
     })
     .catch((err)=>{console.log(err)})
   }
