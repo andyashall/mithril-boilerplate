@@ -47,3 +47,15 @@
   background-color: #fff;
   border: 1px solid #0070c9;
 }
+
+@media screen and (max-width: 800px) {
+  .headRight, .headLeft {
+    display: none;
+  }
+  .headCen {
+    width: 98%;
+  }
+  .headCen input {
+    width: 100%;
+  }
+}

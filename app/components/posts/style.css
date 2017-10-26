@@ -9,3 +9,9 @@
   border-left: 1px solid rgba(0,0,0,.05);
   border-right: 1px solid rgba(0,0,0,.05);
 }
+
+@media screen and (max-width: 800px) {
+  .postsCont {
+    width: 100%;
+  }
+}
