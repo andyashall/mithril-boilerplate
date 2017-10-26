@@ -1,13 +1,12 @@
 'use strict'
 
-const path = require('path')
-const express = require('express')
-const compression = require('compression')
-const isDeveloping = process.env.NODE_ENV !== 'production'
-const port = isDeveloping ? 3000 : process.env.PORT
-const MongoClient = require('mongodb').MongoClient
-  , assert = require('assert')
-const bodyParser = require('body-parser')
+const path = require('path'),
+      express = require('express'),
+      compression = require('compression'),
+      isDeveloping = process.env.NODE_ENV !== 'production',
+      port = isDeveloping ? 3000 : process.env.PORT,
+      MongoClient = require('mongodb').MongoClient,
+      assert = require('assert')
 
 const url = isDeveloping ? require("./mongo.conf.js") : process.env.MONGO_URL
 
@@ -19,12 +18,12 @@ app.use(require('body-parser').json())
 require('./api')(app, url, MongoClient, assert)
 
 if (isDeveloping) {
-  const webpack = require('webpack')
-  const webpackMiddleware = require('webpack-dev-middleware')
-  const webpackHotMiddleware = require('webpack-hot-middleware')
-  const config = require('./webpack.base.conf.js')
-  const compiler = webpack(config)
-  const middleware = webpackMiddleware(compiler, {
+  const webpack = require('webpack'),
+        webpackMiddleware = require('webpack-dev-middleware'),
+        webpackHotMiddleware = require('webpack-hot-middleware'),
+        config = require('./webpack.base.conf.js'),
+        compiler = webpack(config),
+        middleware = webpackMiddleware(compiler, {
     publicPath: config.output.publicPath,
     contentBase: 'src',
     stats: {

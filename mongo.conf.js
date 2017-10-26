@@ -1,1 +1,1 @@
-module.exports = "Enter Mongo URL Here";
+module.exports = 'insert_url_here';
