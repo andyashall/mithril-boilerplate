@@ -11,3 +11,6 @@ Minimal boilerplate using express for back-end, Mithril for front-end and Webpac
 5. open http://localhost:3000 in your browser.
 6. To bundle for production run `npm run build`
 
+## Toodo 
+
+- [ ] Update all package versions 
