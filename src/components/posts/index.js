@@ -1,6 +1,6 @@
 import m from 'mithril'
 import Post from '../post'
-import css from './style.css'
+import css from './style.scss'
 import store from '../../store'
 
 export default class Posts {

@@ -1,5 +1,5 @@
 import m from 'mithril'
-import css from './style.css'
+import css from './style.scss'
 
 const style = {
   author: {
