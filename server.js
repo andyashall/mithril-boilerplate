@@ -18,28 +18,30 @@ app.use(require('body-parser').json())
 require('./api')(app, url, MongoClient, assert)
 
 if (isDeveloping) {
-  const webpack = require('webpack'),
-        webpackMiddleware = require('webpack-dev-middleware'),
-        webpackHotMiddleware = require('webpack-hot-middleware'),
-        config = require('./webpack.base.conf.js'),
-        compiler = webpack(config),
-        middleware = webpackMiddleware(compiler, {
-    publicPath: config.output.publicPath,
-    contentBase: 'src',
-    stats: {
-      colors: true,
-      hash: false,
-      timings: true,
-      chunks: false,
-      chunkModules: false,
-      modules: false
+  const webpack = require('webpack');
+  const config = require('./config/webpack.common.js');
+  config.mode = 'development'
+  const compiler = webpack(config);
+  const isObject = require('is-object');
+  const middleware = require('webpack-dev-middleware');
+  
+  // This function makes server rendering of asset references consistent with different webpack chunk/entry configurations
+  function normalizeAssets(assets) {
+    if (isObject(assets)) {
+      return Object.values(assets);
     }
-  })
-  app.use(middleware)
-  app.use(webpackHotMiddleware(compiler))
-  app.get('*', (req, res) => {
-    res.write(middleware.fileSystem.readFileSync(path.join(__dirname, 'dist/index.html')))
-    res.end()
+  
+    return Array.isArray(assets) ? assets : [assets];
+  }
+  
+  app.use(middleware(compiler, { serverSideRender: true }));
+  
+  // The following middleware would not be invoked until the latest build is finished.
+  app.use((req, res) => {
+    const { devMiddleware } = res.locals.webpack;
+    const outputFileSystem = devMiddleware.outputFileSystem;
+    const jsonWebpackStats = devMiddleware.stats.toJson();
+    const { assetsByChunkName, outputPath } = jsonWebpackStats;
   })
 } else {
   app.use(express.static(__dirname + '/dist'))

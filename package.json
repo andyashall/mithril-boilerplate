@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist && cross-env NODE_ENV=production webpack --config ./webpack.prod.conf.js --progress --profile --colors",
     "prod": "export NODE_ENV=production PORT=3000 && node server.js",
-    "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
+    "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js && node server.js",
     "update-packages": "node wipe-dependencies.js && rm -rf node_modules && npm update --save-dev && npm update --save"
   },
   "repository": {
@@ -51,6 +51,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.1.4",
     "html-webpack-plugin": "^4.5.0",
+    "is-object": "^1.0.2",
     "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "prettier": "^2.1.2",
@@ -59,7 +60,9 @@
     "terser-webpack-plugin": "^4.2.3",
     "webpack": "^5.1.2",
     "webpack-cli": "^4.0.0",
+    "webpack-dev-middleware": "^4.1.0",
     "webpack-dev-server": "^3.11.0",
+    "webpack-hot-middleware": "^2.25.0",
     "webpack-merge": "^5.2.0"
   }
 }
