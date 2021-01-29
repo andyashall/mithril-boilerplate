@@ -26,7 +26,7 @@ if (isDeveloping) {
   const middleware = require('webpack-dev-middleware');
   
   // This function makes server rendering of asset references consistent with different webpack chunk/entry configurations
-  function normalizeAssets(assets) {
+  const normalizeAssets = (assets) => {
     if (isObject(assets)) {
       return Object.values(assets);
     }
@@ -34,15 +34,16 @@ if (isDeveloping) {
     return Array.isArray(assets) ? assets : [assets];
   }
   
-  app.use(middleware(compiler, { serverSideRender: true }));
+  app.use(middleware(compiler, { serverSideRender: false }));
   
   // The following middleware would not be invoked until the latest build is finished.
-  app.use((req, res) => {
+  app.get('*', (req, res) => {
     const { devMiddleware } = res.locals.webpack;
     const outputFileSystem = devMiddleware.outputFileSystem;
     const jsonWebpackStats = devMiddleware.stats.toJson();
     const { assetsByChunkName, outputPath } = jsonWebpackStats;
   })
+
 } else {
   app.use(express.static(__dirname + '/dist'))
   app.get('*', (req, res) => {

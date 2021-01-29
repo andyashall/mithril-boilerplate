@@ -21,17 +21,17 @@ module.exports = {
     new CleanWebpackPlugin(),
 
     // Copies files from target to destination folder
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: paths.src + "/assets",
-    //       to: "assets",
-    //       globOptions: {
-    //         ignore: ["*.DS_Store"],
-    //       },
-    //     },
-    //   ],
-    // }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: paths.src + "/assets",
+          to: "assets",
+          globOptions: {
+            ignore: ["*.DS_Store"],
+          },
+        },
+      ],
+    }),
 
     // Generates an HTML file from a template
     // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501

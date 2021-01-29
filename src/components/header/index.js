@@ -16,7 +16,15 @@ export default class Header {
   }
   view() {
     return m('.headCont',
-      m('.headLeft', m('a', {href: '/'}, 'Home')),
+      m('.headLeft',
+        m('img', {
+          src: '../../assets/images/mithril-logo.svg',
+          style: {
+            display: 'inline-block'
+          }
+        }),
+        m('a', {href: '/'}, 'Home')
+      ),
       m('.headCen', m('input', {onkeyup: (e)=>{store.dispatch(search(e.target.value))} , placeholder: 'Search...'})),
       m('.headRight', {onclick: this.post}, 'Login / Signup')
     )
