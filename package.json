@@ -2,7 +2,7 @@
   "name": "mith",
   "version": "0.0.3",
   "engines": {
-    "node": "6.11.3"
+    "node": "14.15.4"
   },
   "description": "Full-Stack boilerplate using express, webpack and mithril",
   "main": "server.js",
