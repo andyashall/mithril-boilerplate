@@ -15,6 +15,14 @@ module.exports = {
     publicPath: "/",
   },
 
+  // // Save node_modules to a separate file
+
+  // resolve: {
+  //   alias: {
+  //     xyz$: [paths.src + '/node_modules/'],
+  //   }
+  // },
+
   // Customize the webpack build process
   plugins: [
     // Removes/cleans build folders and unused assets when rebuilding
