@@ -33,8 +33,10 @@ module.exports = {
       ],
     }),
 
-    // Generates an HTML file from a template
-    // Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
+    /*
+     * Generates an HTML file from a template
+     * Generates deprecation warning: https://github.com/jantimon/html-webpack-plugin/issues/1501
+     */
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
@@ -46,7 +48,7 @@ module.exports = {
           minifyCSS: true,
           minifyJS: true,
           removeComments: true
-          // more options:
+          // More options:
           // https://github.com/kangax/html-minifier#options-quick-reference
         }
         : false

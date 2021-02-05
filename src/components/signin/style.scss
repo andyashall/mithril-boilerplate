@@ -1,0 +1,87 @@
+.signinCont {}
+
+.signinLogo {
+  color: #888;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.signinCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+
+  h3 {
+    text-align: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+    font-size: 1.2rem;
+  }
+
+  input, select {
+    display: block;
+    margin-bottom: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    padding: 10px 8px;
+    border-radius: 3px;
+    border: 0;
+    background-color: #f1f1f1;
+    border: 1px solid #f1f1f1;
+  }
+
+  input {
+    &:hover {
+      background-color: #f6f6f6;
+    }
+
+    &:focus {
+      background-color: #fff;
+      border-color: #e6e6e6;
+    }
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+    padding: 10px 8px;
+    border: 0;
+    background-color: #333;
+    color: #fff;
+    border-radius: 3px;
+
+    &:hover {
+      background-color: #555;
+      cursor: pointer;
+    }
+
+    &:active {
+      transform: translateY(1px);
+      outline: none;
+    }
+  }
+
+  .passwordReset {
+    text-align: center;
+    margin-top: 2rem;
+    color: #0070c9;
+    display: block;
+    text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  b {
+    text-align: center;
+  }
+}
