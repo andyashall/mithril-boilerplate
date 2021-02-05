@@ -7,6 +7,6 @@ import Signin from './views/signin'
 
 m.route(document.body, '/', {
   '/': Home,
-  '/': Signin,
+  '/signin': Signin,
   '/p/:page': Page
 })
