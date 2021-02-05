@@ -8,7 +8,7 @@ const path = require('path'),
       MongoClient = require('mongodb').MongoClient,
       assert = require('assert')
 
-const url = isDeveloping ? require("./mongo.conf.js") : process.env.MONGO_URL
+const url = isDeveloping ? 'mongodb://mongo:27017' : process.env.MONGO_URL
 
 const app = express()
 app.use(compression())
