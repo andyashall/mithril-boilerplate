@@ -2,7 +2,7 @@
   "name": "mithril-boilerplate",
   "version": "0.0.3",
   "engines": {
-    "node": "15.8.0"
+    "node": ">=14.0.0"
   },
   "description": "Full-Stack boilerplate using express, webpack and mithril",
   "main": "server.js",
